@@ -3,11 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/6388507e5f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <section id="images"></section>
-    <section id="slides"></section>
-    <nav id="botnav"></nav>
+    <header></header>
+    <section id=main-columns>
+      <aside id=transcript-container class="column">
+          <article id=transcript>
+            <h2>Transcript</h2>
+            <p>Start of session...</p>
+          </article>
+      </aside>
+      <div id=produced-images class="column">
+        <p>images will go here</p>
+      </div>
+    </section>
+    <nav id="botnav">
+      <i class="fas fa-microphone-alt fa-3x" id=microphone-icon></i>
+      <button id="start-record-btn" class="btn-success" title="Start Recording">Start Recognition</button>
+      <button id="pause-record-btn" class="btn-warning" title="Pause Recording">Pause Recognition</button>
+      <p id="instructions">Press the
+        <strong>Start Recognition</strong> button and allow access.</p>
+      </nav>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/index.js" type="text/javascript"></script>
 </html>
