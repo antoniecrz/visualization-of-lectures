@@ -1,0 +1,23 @@
+{
+  "name": "visualization-of-lectures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austcollins/visualization-of-lectures.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austcollins/visualization-of-lectures/issues"
+  },
+  "homepage": "https://github.com/austcollins/visualization-of-lectures#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^15.10.0"
+  }
+}
