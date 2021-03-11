@@ -45,7 +45,6 @@ recognition.onresult = function(event) {
 };
 
 recognition.onstart = function() {
-    console.log("testing");
     instructions.text('Voice recognition activated. Try speaking into the microphone.');
     $('#microphone-icon').css('color', 'red')
 }
