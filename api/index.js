@@ -1,24 +1,18 @@
 'use strict';
 
 const express = require('express');
+var bodyParser = require('body-parser')
 
 const api = express.Router();
+const nlp = require('./nlp.js')
 
-api.get('/', async (req, res) => {
-
-
-    // TODO: get text from browser client
-
-    // TODO: run through natural language processor
-
-    // TODO: search in google API to get images from trusted sources
-
-    // TODO: return keywords used
-
-    // TODO: return links to images
-
-    res.send('123');
-    // example api route
+api.post('/', bodyParser.text(), async (req, res) => {
+    var value = req.body;
+    console.log("Analysing: " + value)
+    try {
+        nlp.getEnt(value)
+    } catch (e) {
+    }
 });
 
 module.exports = api;

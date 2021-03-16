@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body {
     margin: 0;
     position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+h2 {
+  margin: 0;
+  padding: 15px;
 }
 #main-columns {
     position: relative;
@@ -15,17 +21,56 @@ body {
     align-items: stretch;
 }
 #main-columns .column {
-    padding: 10px;
 }
 #transcript-container {
-    background-color: beige;
+    background-color: #AAAAAA;
     flex-grow: 1;
     overflow-y: scroll;
     overflow-wrap: break-word;
+    max-width: 300px;
 }
+#transcript-container h2 {
+  background-color: #001f3f;
+  color: white;
+}
+  .final {
+    color: black;
+    padding-right: 3px; 
+  }
+  .interim {
+    color: gray;
+  }
+  .info {
+    font-size: 14px;
+    color: white;
+    display: none;
+  }
+  #info {
+    display: inline;
+    visibility: hidden;
+  }
+  #start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+  }
+  #start_icon {
+      color: white;
+  }
+  #div_language {
+    display: inline;
+  }
+  #results {
+    padding: 20px;
+  }
+
+
 #produced-images {
-    background-color: aquamarine;
+    background-color: #DDDDDD;
     flex-grow: 3;
+}
+#produced-images h2 {
+  background-color: #0074D9;
 }
 
 #botnav{
@@ -33,7 +78,7 @@ body {
     height: calc(100px - 20px);
     width: calc(100% - 20px);
     padding: 10px;
-    background-color: black;
+    background-color: #FF851B;
     color: white;
     line-height: calc(100px - 20px);
     display: inline-block;
