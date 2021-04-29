@@ -22,14 +22,15 @@ async function getEnt(textIn) {
     const entities = result.entities;
 
     console.log('Entities:');
-    entities.forEach(entity => {
-    console.log(entity.name);
-    console.log(` - Type: ${entity.type}, Salience: ${entity.salience}`);
-    if (entity.metadata && entity.metadata.wikipedia_url) {
-        console.log(` - Wikipedia URL: ${entity.metadata.wikipedia_url}`);
-
-    }
+    const imageWords = await entities.map(entity => {
+        console.log(entity.name);
+        console.log(` - Type: ${entity.type}, Salience: ${entity.salience}`);
+        if (entity.metadata && entity.metadata.wikipedia_url) {
+            console.log(` - Wikipedia URL: ${entity.metadata.wikipedia_url}`);
+        }
+        return entity.name;
     });
+    return imageWords;
 };
 
 module.exports.getEnt = text => getEnt(text);

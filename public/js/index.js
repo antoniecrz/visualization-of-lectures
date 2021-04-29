@@ -83,7 +83,13 @@ if (!('webkitSpeechRecognition' in window)) {
         let p = document.createElement("p")
         p.innerText = final_transcript
         final_div.append(p);
-        postToAPI(final_transcript);
+        postToAPI(final_transcript).then(images => {
+          console.log('hello: ', images);
+          if (images) {
+            document.querySelector(".img-result-1").src = images[0];
+            document.querySelector(".img-result-2").src = images[1];
+          }
+        });
       } else {
         interim_transcript += event.results[i][0].transcript;
       }
@@ -139,19 +145,33 @@ function showInfo(s) {
 /**
  * Post to API
  */
-async function postToAPI(text) {
+function postToAPI(text) {
+    let img1 = '';
+    let img2 = '';
     const requestOptions = {
         method: 'POST',
         body: text
     };
-    fetch('./api/', requestOptions)
-    .then(res => res.text())
-  .then(
-    (res) => {
-        console.log(res);
-    },
-    (error) => {
-        console.log(error);
-    }
-  );
+    return new Promise((resolve, reject) => {
+      fetch('/api', requestOptions)
+        .then(res => res.json())
+        .then((res) => {
+              console.log("res: ", res);
+              console.log(`url to search: https://www.googleapis.com/customsearch/v1?key=${res.apiKey}&cx=${res.cx}&q=${res.imageWords[0]}&searchType=image`);
+              fetch(`https://www.googleapis.com/customsearch/v1?key=${res.apiKey}&cx=${res.cx}&q=${res.imageWords[0]}&num=2&searchType=image`)
+              // fetch(`https://www.googleapis.com/customsearch/v1?key=${res.apiKey}&cx=${res.cx}&q=valorant+sova&num=2&searchType=image`)
+                .then(response => response.json())
+                .then(results => {
+                  console.log("returned from search: ", results);
+                  img1 = results.items[0].link;
+                  img2 = results.items[1].link;
+                  resolve([img1, img2]);
+                });
+          },
+          (error) => {
+              console.log(error);
+          }
+        );
+    });
+    
 }

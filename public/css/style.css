@@ -24,7 +24,7 @@ h2 {
 }
 #transcript-container {
     background-color: #AAAAAA;
-    flex-grow: 1;
+    flex: 1;
     overflow-y: scroll;
     overflow-wrap: break-word;
     max-width: 300px;
@@ -64,10 +64,44 @@ h2 {
     padding: 20px;
   }
 
+.img-result-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-result {
+  max-width: 25%;
+  max-height: 25%;
+  /* flex: 1; */
+}
+
+/* .img-result-1 {
+  flex: 1;
+}
+
+.img-result-2 {
+  flex: 2;
+}
+
+.img-result-3 {
+  flex: 3;
+}
+
+.img-result-4 {
+  flex: 4;
+}
+
+.img-result-5 {
+  flex: 5;
+}
+
+.img-result-6 {
+  flex: 6;
+} */
 
 #produced-images {
     background-color: #DDDDDD;
-    flex-grow: 3;
+    flex: 3;
 }
 #produced-images h2 {
   background-color: #0074D9;
