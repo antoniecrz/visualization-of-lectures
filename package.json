@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "auth": "export GOOGLE_APPLICATION_CREDENTIALS=\"/Users/antoniecruz/Documents/GitHub/visualization-of-lectures/visualization-of-lectures-c54f1929fd0b.json\" && export CUSTOM_GOOGLE_SEARCH_API_KEY=AIzaSyADZPDQY17OVBlGh8ljE4rlDynfL9d_uGE",
     "start": "node app"
   },
   "repository": {
